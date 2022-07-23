@@ -1,13 +1,19 @@
 # Wordman
-A password manager app that is built using Django and Bootstrap\
+A password manager app that is built using Django and Bootstrap</br>
 
-To run this project:
->cd wordman 
->python manage.py makemigrations 
->python manage.py migrate 
+Commands to run the project:
+
+>cd wordman
+</br>
+>python manage.py makemigrations
+</br>
+>python manage.py migrate
+</br>
 >python manage.py runserver
-
-### For the Admin page:\
+</br>
+### For the Admin page:</br>
 ---
-Username : WORD\
-Password : 1234\
+Username : WORD
+</br>
+Password : 1234
+</br>
