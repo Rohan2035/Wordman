@@ -11,7 +11,7 @@ Commands to run the project:
 </br>
 >python manage.py runserver
 </br>
-### For the Admin page:</br>
+### For the Admin page:
 ---
 Username : WORD
 </br>
