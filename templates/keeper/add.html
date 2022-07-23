@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block head %}
+
+    <title>Add Password</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container mb-4">
+
+        <div class="row">
+
+            <div class="col-md-6 mx-auto mb-4">
+
+                {% for message in messages %}
+                {% if message %}
+                <div class="alert alert-{{ message.tags }} mt-2 mb-2">
+        
+                    {{ message }}
+        
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                <div class="border bg-white mt-2 p-3">
+                    
+                    <h3 align="center">ADD PASSWORD</h3>
+
+                    <hr>
+
+                    <form action="" method="POST">
+
+                        {% csrf_token %}
+                        {{form | crispy}}
+
+                        <hr>
+                        
+                        <input type="submit" value="Submit" class="btn btn-warning mb-2">
+                        
+                        <a href="{% url 'keeper-index' %}" class="btn btn-dark mb-2">Back</a>
+                        
+
+
+                    </form>
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

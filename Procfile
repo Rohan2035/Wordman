@@ -1,0 +1,1 @@
+web: gunicorn wordman.wsgi --log-file -

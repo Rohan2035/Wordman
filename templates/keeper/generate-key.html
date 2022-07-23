@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Key</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6 mx-auto bg-white mt-4 pb-2">
+
+                <h3 class="mx-auto mt-2">Your Secret Key</h3>
+                <span>Please keep this key safely <span class="text-danger text-sm">*</span></span>
+                <hr>
+                <span class="mx-auto"><strong>{{key}}</strong></span>
+                <hr>
+                <a href="{% url 'keeper-index' %}" class="btn btn-info">Home</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>Welcome {{request.user}}</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/index-1.css' %}">
+
+{% endblock %}
+
+{% block body %}
+    
+    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+        <strong>Alert!</strong> This web site is for demonstration purpose only
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="container mt-3">
+        
+        <div class="row">
+
+            
+
+            {% if flag %}
+
+                <div class="col-6 mb-3 mx-auto">
+
+
+                    <div class="border bg-white p-3">
+
+                        <a href="{% url 'keeper-get-key' %}">
+
+                            <img src="{% static 'images/G.jpg' %}"  class="img-thumbnail" alt="Not Found">
+
+                        </a>
+
+                    </div>
+
+                </div>
+            
+        
+            {% else %}
+
+                <div class="col-md-6 mb-3">
+                    
+                    <div class="border bg-white p-3">
+
+                        <a href="{% url 'keeper-add-password' %}">
+
+                            <img src="{% static 'images/Add.jpg' %}"  class="img-thumbnail" alt="Not Found">
+
+                        </a>
+
+                    </div>
+                
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <div class="border bg-white p-3">
+
+                        <a href="{% url 'keeper-view-password' %}">
+
+                            <img src="{% static 'images/View.jpg' %}"  class="img-thumbnail" alt="Not Found">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% include 'partials/GP.html' %}
+
+
+    <script src="{% static 'JS/index.js' %}"></script>
+
+{% endblock %}

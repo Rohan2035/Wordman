@@ -1,0 +1,14 @@
+<form action="/view-password/" method="POST">
+    
+    {% csrf_token %}
+    <input type="hidden" name="password_label" value="{{ profile.password_label }}">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Key: </label>
+      <input type="password" class="form-control" id="key" aria-describedby="emailHelp" name="key">
+      <small id="emailHelp" class="form-text text-muted">
+        <span class="text-danger"><strong>Note: </strong></span>Entering wrong key value can cause error and might yield wrong value
+      </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
