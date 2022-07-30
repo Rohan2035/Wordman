@@ -1,7 +1,6 @@
 # Wordman : The Password Manager
 ## Wordman is a web app which is used to store and retrive passwords
 
---
 Commands to Run the project:
 
 >cd wordman 
@@ -11,9 +10,9 @@ Commands to Run the project:
 >python manage.py migrate 
 
 >python manage.py runserver
---
 
-Admin Details: \
+
+Admin Details: 
 
 Username: WORD\
 Password: 1234
