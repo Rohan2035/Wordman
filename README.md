@@ -15,5 +15,6 @@ Commands to Run the project:
 
 Admin Details:
 ---
-Username : WORD
-Password : 1234
+Username : WORD\
+Password : 1234\
+--
