@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
     <title>Key</title>
@@ -15,9 +16,10 @@
                 <h3 class="mx-auto mt-2">Your Secret Key</h3>
                 <span>Please keep this key safely <span class="text-danger text-sm">*</span></span>
                 <hr>
-                <span class="mx-auto"><p><strong>{{key}}</strong></p></span>
+                <pre style="height: 10%;"><strong><span id="key">{{key}}</span></strong></pre>
                 <hr>
                 <a href="{% url 'keeper-index' %}" class="btn btn-info">Home</a>
+                <button class="btn btn-danger" onclick="clip()">Copy Key</button>
 
             </div>
 
@@ -25,6 +27,8 @@
 
     </div>
 
+
+    <script src="{% static 'JS/generate-key.js' %}"></script>
 
 
 {% endblock %}
