@@ -50,6 +50,7 @@ class add_password(LoginRequiredMixin, View):
 
     template_name = 'keeper/add.html'
     invalid_msg = 'Please Enter a Valid Key 🔑🔑'
+    store = models.password_store
 
     def encrypt_func(self, key, password):
         
@@ -77,9 +78,18 @@ class add_password(LoginRequiredMixin, View):
 
         if form.is_valid():
 
+            password_label = form.cleaned_data['password_label']
             key = form.cleaned_data['key'].encode()
             password = form.cleaned_data['password'].encode()
 
+            # Check whether the object exists
+            if self.store.objects.filter(password_label = password_label, user_profile = request.user).exists():
+
+                messages.warning(request, 'The password already exists ⚠⚠')
+                return redirect('keeper-add-password')
+
+
+            # Save the form temporarily 
             form_post = form.save(commit=False)
 
             # Attach the user who adds the password
