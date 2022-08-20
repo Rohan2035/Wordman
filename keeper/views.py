@@ -117,7 +117,6 @@ class add_password(LoginRequiredMixin, View):
 class view_password(LoginRequiredMixin, View):
 
     template_1 = 'keeper/view-password-2.html'
-    template_2 = 'keeper/view-password-1.html'
     store = models.password_store
 
     def decryption_func(self, key, password):
@@ -152,7 +151,7 @@ class view_password(LoginRequiredMixin, View):
         dec_password = self.decryption_func(key, password)
 
         context = {'label' : password_label, 'password' : dec_password}
-        return render(request, self.template_2, context)
+        return render(request, self.template_1, context)
 
 # Deleting Passwords
 @login_required
